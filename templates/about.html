@@ -34,6 +34,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            /* space-between: 0.8; */
             margin-bottom: 2rem;
         }
         
@@ -115,76 +116,77 @@
         <p class="para-container">
             Initially the data set with which we started was very big. The credit for data goes to <a href="https://data.gov.in/">data.gov.in</a> We used two data set one included district vise data set of production of size(102800 X 5) and a rainfall
             data set. The both data sets of contains data of years from 1997-2015. After merging both data sets properly. We filtered most frequent crops in data sets. The description of the data set:
-            <table border="1" class="table-responsive">
-                <thead>
-                    <tr style="text-align: right;">
-                        <th></th>
-                        <th>Year</th>
-                        <th>Area</th>
-                        <th>Production</th>
-                        <th>Rainfall</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>count</th>
-                        <td>62257.000000</td>
-                        <td>62257.000000</td>
-                        <td>6.225700e+04</td>
-                        <td>62257.000000</td>
-                    </tr>
-                    <tr>
-                        <th>mean</th>
-                        <td>2005.913150</td>
-                        <td>13812.748856</td>
-                        <td>3.379479e+04</td>
-                        <td>1106.764675</td>
-                    </tr>
-                    <tr>
-                        <th>std</th>
-                        <td>5.102923</td>
-                        <td>39455.645792</td>
-                        <td>1.183489e+05</td>
-                        <td>462.557062</td>
-                    </tr>
-                    <tr>
-                        <th>min</th>
-                        <td>1997.000000</td>
-                        <td>0.280000</td>
-                        <td>2.000000e-02</td>
-                        <td>274.700000</td>
-                    </tr>
-                    <tr>
-                        <th>25%</th>
-                        <td>2002.000000</td>
-                        <td>113.000000</td>
-                        <td>1.000000e+02</td>
-                        <td>746.900000</td>
-                    </tr>
-                    <tr>
-                        <th>50%</th>
-                        <td>2006.000000</td>
-                        <td>824.000000</td>
-                        <td>9.020000e+02</td>
-                        <td>1061.000000</td>
-                    </tr>
-                    <tr>
-                        <th>75%</th>
-                        <td>2010.000000</td>
-                        <td>5225.000000</td>
-                        <td>7.569000e+03</td>
-                        <td>1332.500000</td>
-                    </tr>
-                    <tr>
-                        <th>max</th>
-                        <td>2015.000000</td>
-                        <td>687000.000000</td>
-                        <td>1.969000e+06</td>
-                        <td>3616.700000</td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div class="table-responsive">
+                <table border="1" class="table table-light">
+                    <thead class="bg-success text-light">
+                        <tr style="text-align: right;">
+                            <th></th>
+                            <th>Year</th>
+                            <th>Area</th>
+                            <th>Production</th>
+                            <th>Rainfall</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="bg-success text-light">count</th>
+                            <td>62257.000000</td>
+                            <td>62257.000000</td>
+                            <td>6.225700e+04</td>
+                            <td>62257.000000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">mean</th>
+                            <td>2005.913150</td>
+                            <td>13812.748856</td>
+                            <td>3.379479e+04</td>
+                            <td>1106.764675</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">std</th>
+                            <td>5.102923</td>
+                            <td>39455.645792</td>
+                            <td>1.183489e+05</td>
+                            <td>462.557062</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">min</th>
+                            <td>1997.000000</td>
+                            <td>0.280000</td>
+                            <td>2.000000e-02</td>
+                            <td>274.700000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">25%</th>
+                            <td>2002.000000</td>
+                            <td>113.000000</td>
+                            <td>1.000000e+02</td>
+                            <td>746.900000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">50%</th>
+                            <td>2006.000000</td>
+                            <td>824.000000</td>
+                            <td>9.020000e+02</td>
+                            <td>1061.000000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">75%</th>
+                            <td>2010.000000</td>
+                            <td>5225.000000</td>
+                            <td>7.569000e+03</td>
+                            <td>1332.500000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-success text-light">max</th>
+                            <td>2015.000000</td>
+                            <td>687000.000000</td>
+                            <td>1.969000e+06</td>
+                            <td>3616.700000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             And some descriptions are portrayed using <a href="https://matplotlib.org/">matplotlib library</a> of python.
         </p>
         <div class="img-container">

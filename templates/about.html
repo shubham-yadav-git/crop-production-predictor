@@ -114,8 +114,8 @@
     <div id="data-pre">
         <h4 class="subhead">Data Pre-processing</h4>
         <p class="para-container">
-            Initially the data set with which we started was very big. The credit for data goes to <a href="https://data.gov.in/">data.gov.in</a> We used two data set one included district vise data set of production of size(102800 X 5) and a rainfall
-            data set. The both data sets of contains data of years from 1997-2015. After merging both data sets properly. We filtered most frequent crops in data sets. The description of the data set:
+            Initially the data set with which we started was very big. The credit for data goes to <a href="https://data.gov.in/">data.gov.in</a>. We have used the two data set of which one included data of production of different crops with size (102800 X 5) and second data set comprises of rainfall
+            data of different states. Both the data sets contain data of 8 years from 1997-2015. After merging both the data sets properly. We filtered the most frequent crops data from the data set. The description of the data set after performing most of pre-processing is below:
             <div class="table-responsive">
                 <table border="1" class="table table-light">
                     <thead class="bg-success text-light">
@@ -202,7 +202,7 @@
     <div id="model-train">
         <h4 class="subhead">Model Train</h4>
         <p class="para-container">
-            This model is trained using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"> Random Forest Regressior </a> algorithm of of Sklearn's package of python. And model is saved using joblib
+            This model has been trained using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"> Random Forest Regressor </a> algorithm of of Sklearn's package of python and model is saved using joblib
             package. Before training the model we divided the data set in ratio of:
         </p>
         <div class="img-container"> <img class="img-fluid" src="{{url_for('static', filename='traintest.png')}}">
@@ -212,7 +212,7 @@
     <div id="model-test">
         <h4 class="subhead"> Model Analysis</h4>
         <p class="para-container">
-            Then model is tested on test data set. The accuracy score of the model is 96.701% and difference of actual and predicted values on some test data shown in below graphs:
+            Then model is tested on test data set. The accuracy score we found on test data was 96.701% and difference in actual and predicted values of some of the test data shown through following graphs:
         </p>
         <div class="img-container">
             <img class="img-fluid" src="{{url_for('static', filename='actpred.png')}}">

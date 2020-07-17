@@ -80,9 +80,11 @@ def predict():
         return render_template("index.html", output="Please provide valid values. (Year>1997 Rainfall>0 and Area>0)")
 
 
-@app.route('/api', methods=["GET"])
+@app.route('/api/<int:year>/<int:area>/<string:crop>/<int:rainfall>/<string:state>/<string:season>', methods=["GET"])
 def api(year, area, crop, rainfall, state, season):
-    output = calculate(year, area, crop, rainfall, state, season)
+    output, cls = calculate(year, area, crop, rainfall, state, season)
+    ans={"out": output}
+    return jsonify(ans)
 
 
     return jsonify(output)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:display="http://www.w3.org/1999/xhtml">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,176 +10,164 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Crop Production Predictor</title>
+
     <style>
-footer {
- /* position: absolute; */
-  left: 0;
-  bottom: 0;
-  padding: 2rem;
-  width: 100%;
-  text-align: center;
-  padding: 3px;
-  display: flex-box;
-  background-color:rgba(12, 236, 23, 0);
-  color: black;
-}
-h1 {
-  margin: auto;
-  padding: auto;
-  text-align: center;
-}
-body {
-color: #09b63d;
-}
-
-.form-group select {
-    background: none;
-    border: none;
-    cursor: pointer;
-    border-bottom: 2px solid green;
-}
-.form-group input{
-    background: none;
-    border: none;
-    cursor: pointer;
-    border-bottom: 2px solid green;;
-}
-  
-
-.formcontainer{
-    margin: 0 50px;
-   
-}
-
-</style>
+        footer {
+            /* position: absolute; */
+            left: 0;
+            bottom: 0;
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            padding: 3px;
+            display: flex-box;
+            background-color: rgba(12, 236, 23, 0);
+            color: black;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        body {
+            color: #09b63d;
+        }
+        
+        .form-group select {
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-bottom: 2px solid green;
+        }
+        
+        .form-group input {
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-bottom: 2px solid green;
+            ;
+        }
+        
+        .formcontainer {
+            margin: 0 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="#">CPP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">About</a>
-            <a class="nav-item nav-link" href="#">Contact Us</a>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="#">CPP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/contact">Contact Us</a>
         </div>
-      </nav>
-
-<h2 style="text-align: center;">Crop Production Predictor</h2>
-
-
-
-
-
-<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="https://source.unsplash.com/1600x450/?tech,ai" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://source.unsplash.com/1600x450/?agriculture,tech" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://source.unsplash.com/1600x450/?india,agriculture" class="d-block w-100" alt="...">
-      </div>
     </div>
-  </div> -->
+</nav>
 
 
 
 
+
+
+
+<h3 style="text-align: center;">Crop Production Predictor</h3>
 
 
 <div class="formcontainer">
-<div class="container-fluid">
-    <Form action="/predict" method="post" id="predict" >
-        <!-- <img src="{{url_for('static', filename='1.jpeg')}}" width="20%" height="10%"></center> -->
-        <div class="form-group" style="margin-top:2%">
+    <div class="container-fluid">
+        <Form action="/predict" method="post" id="predict">
+            <!-- <img src="{{url_for('static', filename='1.jpeg')}}" width="20%" height="10%"></center> -->
+            <div class="form-group" style="margin-top:2%">
 
-            <label for="state">Choose your region:</label>
-            <select name="state" id="state" form="predict" class="form-control">
-                <!-- <option value="none">Select region</option> -->
-                <option value="up">Uttar Pradesh</option>
-                <option value="bihar">Bihar</option>
-                <option value="punjab">Punjab</option>
-                <option value="uk">Uttrakhand</option>
-                <option value="jharkhand">Jharkhand</option>
-                <option value="chattisgarh">Chattisgarh</option>
-                <option value="kerala">Kerala</option>
-                <option value="odisha">Odisha</option>
-                <option value="hp">Himanchal Pradesh</option>
-                <option value="ap">Arunachal Pradesh</option>
-                <option value="jk">Jammu And Kashmir</option>
-                <option value="tn">Tamil Nadu</option>
-                <option value="andaman">Andaman And Nicobar</option>
-            </select>
-        </div>
-
-
-        <div class="form-group" style="margin-top:2%">
-
-            <label for="season">Choose a season:</label>
-            <select name="season" id="season" form="predict" class="form-control">
-                <option value="rabi">Rabi</option>
-                <option value="kharif">Kharif</option>
-                <option value="wholeyear">Whole Year</option>
-                <option value="summer">Summer</option>
-                <option value="winter">Winter</option>
-            </select>
-        </div>
+                <label for="state">Choose your region:</label>
+                <select name="state" id="state" form="predict" class="form-control" required>
+                    <option selected value="">Choose...</option>
+                    <option value="up">Uttar Pradesh</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="uk">Uttrakhand</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="chattisgarh">Chattisgarh</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="hp">Himanchal Pradesh</option>
+                    <option value="ap">Arunachal Pradesh</option>
+                    <option value="jk">Jammu And Kashmir</option>
+                    <option value="tn">Tamil Nadu</option>
+                    <option value="andaman">Andaman And Nicobar</option>
+                </select>
+            </div>
 
 
+            <div class="form-group" style="margin-top:2%">
+
+                <label for="season">Choose a season:</label>
+                <select name="season" id="season" form="predict" class="form-control" required>
+                    <option selected  value="">Choose...</option>
+                    <option value="rabi">Rabi</option>
+                    <option value="kharif">Kharif</option>
+                    <option value="wholeyear">Whole Year</option>
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                </select>
+            </div>
 
 
-        <div class="form-group" style="margin-top:2%">
-            <label for="crop_name">Choose a crop:</label>
-            <select name="crop_name" id="crop_name" form="predict" class="form-control">
-                <option value="rice">Rice</option>
-                <option value="wheat">Wheat</option>
-                <option value="potato">Potato</option>
-                <option value="drychillies">Dry Chillies</option>
-                <option value="maize">Maize</option>
-                <option value="masoor">Masoor</option>
-                <option value="moong">Moong(Green Gram)</option>
-                <option value="onion">Onion</option>
-                <option value="peas">Peas & beans (Pulses)</option>
-                <option value="ragi">Ragi</option>
-                <option value="rapeseed">Rapeseed & Mustard</option>
-                <option value="sesamum">Sesamum</option>
-                <option value="urad">Urad</option>
-                <option value="groundnut">Groundnut</option>
-                <option value="gram">Gram</option>
-                <!--                <option value=""></option>-->
 
 
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="year">Year:</label>
-            <input type="number" id ="year" name="year" class="form-control" required placeholder="Enter the year">
-        </div>
-        <div class="form-group">
-            <label for="area">Area (in Hectare):</label>
-            <input type="number" id ="area" name="area" class="form-control" required placeholder="Enter the area">
-        </div>
-        <div class="form-group">
-            <label for="area">Rainfall (in mm):</label>
-            <input type="number" id="rain" name="rain" class="form-control" required placeholder="Enter the rainfall">
-        </div>
-        <button  type="submit" class="btn btn-primary"id="prd_btn" name="prd_btn" >Predict</button>
-    </Form>
+            <div class="form-group" style="margin-top:2%">
+                <label for="crop_name">Choose a crop:</label>
+                <select name="crop_name" id="crop_name" form="predict" class="form-control" required>
+                    <option selected value="">Choose...</option>
+                    <option value="rice">Rice</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="potato">Potato</option>
+                    <option value="drychillies">Dry Chillies</option>
+                    <option value="maize">Maize</option>
+                    <option value="masoor">Masoor</option>
+                    <option value="moong">Moong(Green Gram)</option>
+                    <option value="onion">Onion</option>
+                    <option value="peas">Peas & beans (Pulses)</option>
+                    <option value="ragi">Ragi</option>
+                    <option value="rapeseed">Rapeseed & Mustard</option>
+                    <option value="sesamum">Sesamum</option>
+                    <option value="urad">Urad</option>
+                    <option value="groundnut">Groundnut</option>
+                    <option value="gram">Gram</option>
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year">Year(Year>1996):</label>
+                <input type="number" id="year" name="year" class="form-control" required placeholder="Enter the year">
+            </div>
+            <div class="form-group">
+                <label for="area">Area (in Hectare and greater than zero):</label>
+                <input type="number" id="area" name="area" class="form-control" required placeholder="Enter the area">
+            </div>
+            <div class="form-group">
+                <label for="area">Rainfall (in mm and greater than 0):</label>
+                <input type="number" id="rain" name="rain" class="form-control" required placeholder="Enter the rainfall">
+            </div>
+            <button  type="submit" class="btn btn-success" id="prd_btn" name="prd_btn">Predict</button>
+        </Form>
+
+    </div>
 
 </div>
+
+
+<div id="out"><hr>
+    <h5 class="{{cls}}" role="alert" align="center"> {{output}}</h5>
     <hr>
-    <h1 class="success" role="alert" align="center"> {{output}}</h1>
 </div>
-<hr>
-
-
 <footer>
 
     <p><a href="mailto:shubhamskyjnp@gmail.com">@copyright Crop Production Predictor</a></p>
@@ -194,4 +183,5 @@ color: #09b63d;
 
 
 </body>
+
 </html>

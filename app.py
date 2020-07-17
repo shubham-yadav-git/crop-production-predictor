@@ -14,26 +14,13 @@ for i in input_features:
     features_dict[i] = 0
 
 
-@app.route('/')
-def home():
-    return render_template("index.html")
+def calculate(year, area, crop, rainfall, state, season):
 
+    features_dict[state] = 1
+    features_dict[crop] = 1
+    features_dict[season] = 1
 
-@app.route('/predict', methods=["POST"])
-def predict():
-    # for rendering results in html gui
-    # noinspection PyBroadException
-    try:
-        year = request.form["year"]
-        area = request.form["area"]
-        crop = request.form["crop_name"]
-        rainfall = request.form["rain"]
-        state = request.form["state"]
-        season =request.form["season"]
-
-        features_dict[state]=1
-        features_dict[crop]=1
-        features_dict[season]=1
+    if year >= 1997 and area > 0 and rainfall > 0:
 
         output = model.predict([[year, area, rainfall, features_dict["ap"], features_dict["bihar"],
                                  features_dict["chattisgarh"], features_dict["hp"], features_dict["jk"],
@@ -49,13 +36,56 @@ def predict():
                                  features_dict["potato"], features_dict["ragi"], features_dict["rapeseed"],
                                  features_dict["rice"],
                                  features_dict["sesamum"], features_dict["urad"], features_dict["wheat"]]])
-        output = round(output[0], 2)
+        output ="The expected production is : " +str(round(output[0], 2))+" tons"
+        cls="alert alert-success"
+    else:
+        output = "Please provide valid values. (Year>1997 Rainfall>0 and Area>0)"
+        cls = "alert alert-danger"
 
-        # output = features_dict
-        return render_template("index.html", output="The expected yield is : " + format(output) + " tons")
+    return output, cls
+
+
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+
+@app.route('/contact')
+def contact():
+    return render_template("contactus.html")
+
+
+@app.route('/predict', methods=["POST"])
+def predict():
+    # for rendering results in html gui
+    # noinspection PyBroadException
+    try:
+        year = int(request.form["year"])
+        area = int(request.form["area"])
+        crop = request.form["crop_name"]
+        rainfall = int(request.form["rain"])
+        state = request.form["state"]
+        season =request.form["season"]
+
+        output, cls = calculate(year, area, crop, rainfall, state, season)
+
+        return render_template("index.html", output=format(output), cls=format(cls))
 
     except:
-        return render_template("index.html", output="Please provide valid inputs:")
+        return render_template("index.html", output="Please provide valid values. (Year>1997 Rainfall>0 and Area>0)")
+
+
+@app.route('/api', methods=["GET"])
+def api(year, area, crop, rainfall, state, season):
+    output = calculate(year, area, crop, rainfall, state, season)
+
+
+    return jsonify(output)
 
 
 if __name__ == "__main__":

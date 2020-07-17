@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>About</title>
+
+    <style>
+        .head {
+            text-align: center;
+            color: green;
+            margin: 2rem;
+            font-size: xx-large;
+        }
+        
+        .subhead {
+            color: rgba(136, 82, 2, 0.815);
+            font-size: large;
+            margin: 2rem 1rem;
+        }
+        
+        a {
+            /* text-decoration-style: none; */
+            color: blue;
+        }
+        
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .para-container {
+            text-align: justify;
+            font-size: large;
+            margin-bottom: 2rem;
+            margin: 2rem 1rem;
+        }
+        
+        footer {
+            /* position: absolute; */
+            left: 0;
+            bottom: 0;
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            padding: 3px;
+            display: flex-box;
+            background-color: rgba(12, 236, 23, 0);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="/">CPP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/about">About</a>
+                <a class="nav-item nav-link" href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="head" name="head" class="head">
+        <h4> About Our Project</h4>
+    </div>
+
+    <div class="content">
+        <h4 class="subhead">Technologies Used</h4>
+        <p id="content" name="content" class="para-container">This webapp is designed using <a href="https://www.w3schools.com/html/html_intro.asp">html</a>,<a href="https://www.w3schools.com/css/css_intro.asp"> css</a>, <a href="https://getbootstrap.com/">bootstrap</a>(few features) for frontend and connected
+            to Machine Learning Model using <a href="https://flask.palletsprojects.com/en/1.1.x/"> Flask (Python framework)</a>. </p>
+    </div>
+    </details>
+
+    <div class="content">
+
+        <p class="para-container">
+            We developed our model in three steps:
+            <ol>
+
+                <li>
+                    <a href="#data-pre">Data Pre-processing</a>
+                </li>
+
+
+                <li>
+                    <a href="#model-train">Model Training</a>
+                </li>
+
+
+                <li>
+                    <a href="#model-test">Model Analysis </a>
+                </li>
+
+            </ol>
+        </p>
+    </div>
+
+
+    <div id="data-pre">
+        <h4 class="subhead">Data Pre-processing</h4>
+        <p class="para-container">
+            Initially the data set with which we started was very big. The credit for data goes to <a href="https://data.gov.in/">data.gov.in</a> We used two data set one included district vise data set of production of size(102800 X 5) and a rainfall
+            data set. The both data sets of contains data of years from 1997-2015. After merging both data sets properly. We filtered most frequent crops in data sets. The description of the data set:
+            <table border="1" class="table-responsive">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th></th>
+                        <th>Year</th>
+                        <th>Area</th>
+                        <th>Production</th>
+                        <th>Rainfall</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>count</th>
+                        <td>62257.000000</td>
+                        <td>62257.000000</td>
+                        <td>6.225700e+04</td>
+                        <td>62257.000000</td>
+                    </tr>
+                    <tr>
+                        <th>mean</th>
+                        <td>2005.913150</td>
+                        <td>13812.748856</td>
+                        <td>3.379479e+04</td>
+                        <td>1106.764675</td>
+                    </tr>
+                    <tr>
+                        <th>std</th>
+                        <td>5.102923</td>
+                        <td>39455.645792</td>
+                        <td>1.183489e+05</td>
+                        <td>462.557062</td>
+                    </tr>
+                    <tr>
+                        <th>min</th>
+                        <td>1997.000000</td>
+                        <td>0.280000</td>
+                        <td>2.000000e-02</td>
+                        <td>274.700000</td>
+                    </tr>
+                    <tr>
+                        <th>25%</th>
+                        <td>2002.000000</td>
+                        <td>113.000000</td>
+                        <td>1.000000e+02</td>
+                        <td>746.900000</td>
+                    </tr>
+                    <tr>
+                        <th>50%</th>
+                        <td>2006.000000</td>
+                        <td>824.000000</td>
+                        <td>9.020000e+02</td>
+                        <td>1061.000000</td>
+                    </tr>
+                    <tr>
+                        <th>75%</th>
+                        <td>2010.000000</td>
+                        <td>5225.000000</td>
+                        <td>7.569000e+03</td>
+                        <td>1332.500000</td>
+                    </tr>
+                    <tr>
+                        <th>max</th>
+                        <td>2015.000000</td>
+                        <td>687000.000000</td>
+                        <td>1.969000e+06</td>
+                        <td>3616.700000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            And some descriptions are portrayed using <a href="https://matplotlib.org/">matplotlib library</a> of python.
+        </p>
+        <div class="img-container">
+            <img class="img-fluid" src="{{url_for('static', filename='desc2.png')}}">
+            <img class="img-fluid" src="{{url_for('static', filename='crops.png')}}">
+            <img class="img-fluid" src="{{url_for('static', filename='cropscount.png')}}">
+
+        </div>
+
+    </div>
+
+
+    <div id="model-train">
+        <h4 class="subhead">Model Train</h4>
+        <p class="para-container">
+            This model is trained using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"> Random Forest Regressior </a> algorithm of of Sklearn's package of python. And model is saved using joblib
+            package. Before training the model we divided the data set in ratio of:
+        </p>
+        <div class="img-container"> <img class="img-fluid" src="{{url_for('static', filename='traintest.png')}}">
+        </div>
+    </div>
+
+    <div id="model-test">
+        <h4 class="subhead"> Model Analysis</h4>
+        <p class="para-container">
+            Then model is tested on test data set. The accuracy score of the model is 96.701% and difference of actual and predicted values on some test data shown in below graphs:
+        </p>
+        <div class="img-container">
+            <img class="img-fluid" src="{{url_for('static', filename='actpred.png')}}">
+            <img class="img-fluid" src="{{url_for('static', filename='actpredscatter.png')}}">
+
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+<footer>
+
+    <p><a href="mailto:shubhamskyjnp@gmail.com">@copyright Crop Production Predictor</a></p>
+</footer>
+
+</html>

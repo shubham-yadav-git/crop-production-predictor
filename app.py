@@ -83,7 +83,7 @@ def predict():
         return render_template("index.html", output="Please provide valid values. (Year>1997 Rainfall>0 and Area>0)")
 
 
-@app.route('/api', methods=["GET","POST"])
+@app.route('/api', methods=["POST"])
 def api():
     year=request.args.get("year")
     area=request.args.get("area")

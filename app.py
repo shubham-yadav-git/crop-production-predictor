@@ -19,6 +19,9 @@ def calculate(year, area, crop, rainfall, state, season):
     features_dict[state] = 1
     features_dict[crop] = 1
     features_dict[season] = 1
+    year=int(year)
+    area=int(area)
+    rainfall=int(rainfall)
 
     if year >= 1997 and area > 0 and rainfall > 0:
 
@@ -65,10 +68,10 @@ def predict():
     # for rendering results in html gui
     # noinspection PyBroadException
     try:
-        year = int(request.form["year"])
-        area = int(request.form["area"])
+        year = request.form["year"]
+        area = request.form["area"]
         crop = request.form["crop_name"]
-        rainfall = int(request.form["rain"])
+        rainfall =request.form["rain"]
         state = request.form["state"]
         season =request.form["season"]
 
@@ -80,14 +83,18 @@ def predict():
         return render_template("index.html", output="Please provide valid values. (Year>1997 Rainfall>0 and Area>0)")
 
 
-@app.route('/api/<int:year>/<int:area>/<string:crop>/<int:rainfall>/<string:state>/<string:season>', methods=["GET"])
-def api(year, area, crop, rainfall, state, season):
+@app.route('/api', methods=["GET"])
+def api():
+    year=request.args.get("year")
+    area=request.args.get("area")
+    crop=request.args.get("crop")
+    rainfall=request.args.get("rain")
+    state=request.args.get("state")
+    season=request.args.get("season")
     output, cls = calculate(year, area, crop, rainfall, state, season)
     ans={"out": output}
     return jsonify(ans)
 
-
-    return jsonify(output)
 
 
 if __name__ == "__main__":
